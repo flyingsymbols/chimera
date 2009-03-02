@@ -5,3 +5,12 @@ git diff a few versions back works like
 
 git diff HEAD^ # diff with one version back
 git diff HEAD^^ # diff with two versions back
+
+in psycopg2/pool.py there are several connection pool methods
+in psycopg2/extras.py there are logging connections and cursors
+    also dictionary cursors and connections
+
+for making a code object become a true function:
+import types
+help(types.FunctionType)
+
