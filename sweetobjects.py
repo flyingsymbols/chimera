@@ -19,19 +19,22 @@ def create_type(f):
     positionals = args[0:-len(defaults)]
     keywords = args[-len(defaults):]
     total = len(args)
-    
+
     class klass(SweetObject):
         def __init__(self, *pvals, **kwvals):
             if len(kwvals) + len(pvals) > total:
                 raise TypeError, "Invalid number of parameters"
             else:
                 self.__dict__ = dict(zip(args, pvals))
-            for n,v in kwvals:
+            for n,v in kwvals.iteritems():
                 if n in args:
                     self.__dict__[n] = v
                 else:
                     raise TypeError, \
                         'Invalid keyword parameter %r' % (name,)
+            for n,v in defaults.iteritems():
+                if n not in self.__dict__:
+                    self.__dict__[n] = v
 
         def __repr__(self):
             param_str = ','.join(['%s=%r' % (n, self.__dict__[n])
@@ -40,10 +43,10 @@ def create_type(f):
 
         def __eq__(self, other):
             return self.__dict__ == other.__dict__
-    
+
     klass.__name__ = class_name
     return klass
-    
+
 
 
 

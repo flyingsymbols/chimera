@@ -1,4 +1,5 @@
 from sweetobjects import create_type
+from nose.tools import assert_equal
 
 @create_type
 def Foo(a, b, c=50): pass
@@ -15,5 +16,10 @@ def test_basic():
     assert f.c == 50
     assert f != f4
     assert f4.c == 3
+
+def test_repl():
+    f = Foo(1,2,3)
+    assert_equal(repr(f), 'Foo(a=1,b=2,c=3)')
+    assert f == eval(repr(f))
 
 
