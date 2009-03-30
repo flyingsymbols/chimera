@@ -1,0 +1,4 @@
+startup_message off
+#hardstatus alwayslastline "%{= dR} %-Lw%50>%{= dG}%n%f* %{= dW}%t%{= dR}%+Lw%<"
+hardstatus alwayslastline "%{=}%{kG}[%H] %{w}[%w] %=%{kG}[%C%A]"
+vbell off
