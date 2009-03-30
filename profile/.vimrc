@@ -2,11 +2,11 @@ set nocompatible
 filetype on
 filetype indent on
 filetype plugin on
-colorscheme slate
 let python_highlight_all=1
 highlight BadWhitespace ctermbg=red guibg=red
 syntax on
 set bg=dark
+colorscheme slate
 
 " folds saves when leaving a file
 au BufWinLeave * silent! mkview
