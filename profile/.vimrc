@@ -21,7 +21,6 @@ set incsearch
 set ruler " line numbers
 set wildmenu " TEST: auto complete?
 set clipboard+=unnamed " TEST: windows clipboard?
-set foldmethod=indent "TEST: folding?
 match BadWhitespace /\s\+$/ " show extra stuff
 set laststatus=2
 set statusline=%-(%f%m%)%=\ %(0x%B\(%b\)\ %(%l:%c/%L\(%p%%\)%)\ %n%)%(%h%r%y%)

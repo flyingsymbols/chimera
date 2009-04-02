@@ -1,4 +1,10 @@
 startup_message off
-#hardstatus alwayslastline "%{= dR} %-Lw%50>%{= dG}%n%f* %{= dW}%t%{= dR}%+Lw%<"
-hardstatus alwayslastline "%{=}%{kG}[%H] %{w}[%w] %=%{kG}[%C%A]"
-vbell off
+vbell on
+defscrollback 1000
+caption always "%{gk}[ %{G}%H %{g}][%= %{wk}%?%-w%?%{r}(%{W}%n %t%?(%u)%?%{r})%{w}%?%+w%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]"`
+hardstatus alwayslastline
+
+bind s split
+bind o only
+bind j focus down
+bind k focus up
